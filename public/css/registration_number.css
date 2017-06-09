@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+.error {
+    color: red;
+}
+#myAddButton {
+    width: 6em;
+    height: 2.3em;
+}
+#myInput {
+  background-color: #42ED9C;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: inherit;;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#footer {
+    font-weight: bold;
+    margin: inherit;
+    padding: 1%;
+    background-color: rgba(96, 125, 139, 0.26);
+    text-decoration: blink;
+    text-shadow: 1px 1px 8px #796DF2;
+}
+.regNumbers {
+    width: 50%;
+    border: 1px solid black;
+    padding: 4%;
+    margin: auto;
+    background-color: #ADEAB1;
+}
+
+h2 {
+    font-weight: bold;
+    margin: inherit;
+    padding: 4%;
+    font-size: -webkit-xxx-large;
+    background-color: cadetblue;
+    text-decoration: blink;
+    text-shadow: 1px 1px 1px #796d15;
+}
+
+div {
+    width: 50%;
+    padding: 4%;
+    margin: auto;
+}
+
+.showInput{
+    width: 100%;
+}
+
+element.style, ul {
+    display: block;
+    font-size: larger;
+    margin-right: 6%;
+}
+
+.myReg {
+    background-color: yellow;
+    background-position: 10px 10px;
+    border: 3px solid black;
+    border-radius: 7px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    margin-top: 5px;
+    padding: 12px 20px 12px 20px;
+    text-align: center;
+    width: 200px;
+    display: block;
+}

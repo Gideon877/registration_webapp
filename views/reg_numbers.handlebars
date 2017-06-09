@@ -1,0 +1,57 @@
+<head>
+    <meta charset="utf-8">
+    <title>Registration Numbers</title>
+    <link rel="stylesheet" href="/css/registration_number.css">
+</head>
+
+
+<h1></h1>
+
+<form class="regNumbers" action="/reg_numbers" method="post" align="center">
+
+    <input type="text" name="reg_number" id="myInput" placeholder="Enter registration number">
+    <input type="submit" id="myAddButton"></input> <br>
+
+    <input type="radio" name="location" id="bellville" value="bellville">
+    <label for="bellville">Bellville</label>
+
+    <input type="radio" name="location" id="capetown" value="capetown">
+    <label for="capetown">Cape Town</label>
+
+    <input type="radio" name="location" id="paarl" value="paarl">
+    <label for="paarl">Paarl</label>
+
+    <input type="radio" name="location" id="all" value="all">
+    <label for="all">All</label><br>
+
+    {{#if messages.error}}
+        <div class="error">
+            {{messages.error}}
+            <br>
+            <br>
+        </div>
+    {{/if}}
+    {{#if messages.success}}
+        <div class="success">
+            {{message.success}}
+            <br>
+            <br>
+        </div>
+    {{/if}}
+
+</form>
+<div align="center">
+
+    {{#each reg_num}}
+    <ul class="myReg">
+            {{this.reg_number}}<br>
+    </ul>
+    {{/each}}
+
+</div>
+
+
+<footer id='footer'>
+    <p align="center">Posted by:
+        <a href="https://twitter.com/gideon877"> <i>Thabang Magaola</i></a> ® <br></p>
+</footer>

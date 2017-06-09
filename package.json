@@ -1,0 +1,19 @@
+{
+  "name": "registration_numbers_webapp",
+  "version": "1.0.0",
+  "description": "web application that displays a registration number plate. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Thabang Gideon Magaola",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.3",
+    "mongoose": "^4.10.1"
+  }
+}
