@@ -7,23 +7,27 @@
 
 <h1></h1>
 
-<form class="regNumbers" action="/reg_numbers" method="post" align="center">
+<div class="regNumbers" align="center">
+    <form action="/reg_numbers" method="post" align="center">
 
-    <input type="text" name="reg_number" id="myInput" placeholder="Enter registration number">
-    <input type="submit" id="myAddButton"></input> <br>
+        <input type="text" name="reg_number" id="myInput" placeholder="Enter registration number">
+        <input type="submit" id="myAddButton" value="Submit"></input> <br>
+    </form>
+    <form class="filterData" action="/filter" method="post">
+        <input type="radio" name="location" id="bellville" value="bellville">
+        <label for="bellville">Bellville</label>
 
-    <input type="radio" name="location" id="bellville" value="bellville">
-    <label for="bellville">Bellville</label>
+        <input type="radio" name="location" id="capetown" value="capetown">
+        <label for="capetown">Cape Town</label>
 
-    <input type="radio" name="location" id="capetown" value="capetown">
-    <label for="capetown">Cape Town</label>
+        <input type="radio" name="location" id="paarl" value="paarl">
+        <label for="paarl">Paarl</label>
 
-    <input type="radio" name="location" id="paarl" value="paarl">
-    <label for="paarl">Paarl</label>
-
-    <input type="radio" name="location" id="all" value="all">
-    <label for="all">All</label><br>
-
+        <input type="radio" name="location" id="all" value="all">
+        <label for="all">All</label><br>
+        <hr>
+        <input type="submit" value="Filter" id="myAddButton">
+    </form>
     {{#if messages.error}}
         <div class="error">
             {{messages.error}}
@@ -39,13 +43,14 @@
         </div>
     {{/if}}
 
-</form>
-<div align="center">
 
+</div>
+
+<div align="center">
     {{#each reg_num}}
-    <ul class="myReg">
+        <ul class="myReg">
             {{this.reg_number}}<br>
-    </ul>
+        </ul>
     {{/each}}
 
 </div>

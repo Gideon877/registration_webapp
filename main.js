@@ -45,32 +45,44 @@ module.exports = function(models) {
             }
         };
 
-        // const filter = function(req, res, done) {
-        //     var placeData = {
-        //         location: req.body.location
-        //     }
-        //
-        //     if (!placeData) {
-        //         req.flash('error', 'Please select a location');
-        //         res.render('reg_numbers');
-        //     } else {
-        //         models.Plate.find({
-        //                 reg_number: req.body.reg_number
-        //             }, function(err, thePlate) {
-        //
-        //                 if (err) {
-        //                     return done(err)
-        //                 }
-        //
-        //                 // if (thePlate) {
-        //                 //
-        //                 // }
-        //             });
-        //         }
-        //     }
+        const filterData = function(req, res, done) {
+
+            var placeData = {
+                location: req.body.location
+            }
+
+
+            if (!placeData || !placeData.location) {
+                req.flash('error', 'Please select a location');
+                res.render('reg_numbers');
+            } else {
+
+
+                if (placeData.location.startsWith('CA')) {
+                    return placeData;
+
+                }
+                
+                var j = 'CA 99-000';
+
+                models.Plate.find({reg_number: j}, function(err, thePlate) {
+                        if (err) {
+                            return done(err)
+                        }
+
+                        display = thePlate;
+                        var data = {
+                            reg_num: display
+                        }
+
+                        res.render('reg_numbers', data);
+                    });
+                }
+            }
 
 
             return {
-                index
+                index,
+                filterData
             };
         };

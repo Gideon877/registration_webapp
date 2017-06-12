@@ -27,8 +27,10 @@ app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 * 30}}));
 app.use(flash()); // set up http session
 
 app.get('/reg_numbers', plateRoutes.index);
+app.get('/filter', plateRoutes.filterData);
 
 app.post('/reg_numbers',plateRoutes.index);
+app.post('/filter',plateRoutes.filterData);
 
 
 var port = app.get("port");

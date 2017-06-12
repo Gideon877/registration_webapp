@@ -73,3 +73,7 @@ element.style, ul {
     width: 200px;
     display: block;
 }
+hr {
+    clear: both;
+    visibility: hidden;
+}
