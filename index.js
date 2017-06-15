@@ -10,7 +10,7 @@ const models = Models(process.env.MONGO_DB_URL || 'mongodb://localhost/reg_numbe
 const plateRoutes = PlateRoutes(models);
 const app = express();
 
-app.set("port", (process.env.PORT || 2017))
+app.set("port", (process.env.PORT || 7000))
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -35,6 +35,11 @@ app.post('/filter',plateRoutes.filterData);
 
 var port = app.get("port");
 
-app.listen(port, function() {
-    console.log('App started on port: ' + port)
+// app.listen(port, function() {
+//     console.log('App started on port: ' + port)
+// });
+var server = app.listen(app.get("port"), function() {
+  var host = server.address().address;
+  var port = server.address().port;
+  console.log('Greetings webapp listening at http://%s:%s', host, port);
 });
