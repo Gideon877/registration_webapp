@@ -16,7 +16,7 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.3",
     "mongoose": "^4.10.1"
-  },
+  }, 
   "engines": {
     "node": "4.2.6"
   },

@@ -44,5 +44,5 @@ var port = app.get("port");
 var server = app.listen(app.get("port"), function() {
   var host = server.address().address;
   var port = server.address().port;
-  console.log('Greetings webapp listening at http://%s:%s', host, port);
+  console.log('Registraion webapp listening at http://%s:%s', host, port);
 });
