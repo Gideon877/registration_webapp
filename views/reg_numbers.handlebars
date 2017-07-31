@@ -1,62 +1,87 @@
 <head>
-    <meta charset="utf-8">
     <title>Registration Numbers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/registration_number.css">
 </head>
 
+<body>
 
-<h1></h1>
-
-<div class="regNumbers" align="center">
-    <form action="/reg_numbers" method="post" align="center">
-
-        <input type="text" name="reg_number" id="myInput" placeholder="Enter registration number">
-        <input type="submit" id="myAddButton" value="Submit"></input> <br>
-    </form>
-    <form class="filterData" action="/filter" method="post">
-        <input type="radio" name="location" id="bellville" value="bellville">
-        <label for="bellville">Bellville</label>
-
-        <input type="radio" name="location" id="capetown" value="capetown">
-        <label for="capetown">Cape Town</label>
-
-        <input type="radio" name="location" id="paarl" value="paarl">
-        <label for="paarl">Paarl</label>
-
-        <input type="radio" name="location" id="all" value="all">
-        <label for="all">All</label><br>
-        <hr>
-        <input type="submit" value="Filter" id="myAddButton">
-    </form>
-    {{#if messages.error}}
-        <div class="error">
-            {{messages.error}}
-            <br>
-            <br>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/reg_numbers">Registration Numbers</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/reg_numbers">Home</a></li>
+                <li><a href="https://gideon877.github.io/portfolio/">Contact</a></li>
+            </ul>
         </div>
-    {{/if}}
-    {{#if messages.success}}
-        <div class="success">
-            {{message.success}}
-            <br>
-            <br>
-        </div>
-    {{/if}}
+    </nav>
+
+    <div class="container">
+        <form action="/reg_numbers" method="post" class="form-inline">
+            <div class="form-group">
+                <input type="text" name="reg_number" class="form-control" placeholder="Enter registration number">
+                <button id="myAddButton" class="btn btn-prima">Submit</button>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+
+        <h3>Location</h3>
+        <form class="filterData" action="/filter" method="post">
+
+            <div class="radio">
+                <label><input type="radio" name="location" value="bellville">Bellville</label>
+            </div>
+
+            <div class="radio">
+                <label><input type="radio" name="location" id="capetown" value="capetown">Cape Town</label>
+            </div>
+
+            <div class="radio">
+                <label><input type="radio" name="location" id="paarl" value="paarl">Paarl</label>
+            </div>
+
+            <div class="radio">
+                <label><input type="radio" name="location" id="all" value="all">All</label>
+            </div>
+
+            <button type="submit" class="btn btn-prima" id="myAddButton">Filter</button>
+        </form>
 
 
-</div>
+        {{#if messages.error}}
+            <div class="alert alert-danger">
+                {{messages.error}}
+                <br>
+                <br>
+            </div>
+        {{/if}}
+        {{#if messages.success}}
+            <div class="success">
+                {{message.success}}
+                <br>
+                <br>
+            </div>
+        {{/if}}
 
-<div align="center">
-    {{#each reg_num}}
-        <ul class="myReg">
-            {{this.reg_number}}<br>
-        </ul>
-    {{/each}}
 
-</div>
+    </div>
+    </div>
 
+    <div class="container">
+        {{#each reg_num}}
+            <ul class="myReg">
+                {{this.reg_number}}<br>
+            </ul>
+        {{/each}}
 
-<footer id='footer'>
-    <p align="center">Posted by:
-        <a href="https://twitter.com/gideon877"> <i>Thabang Magaola</i></a> ® <br></p>
-</footer>
+    </div>
+</body>

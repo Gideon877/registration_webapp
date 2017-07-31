@@ -74,13 +74,11 @@ module.exports = function(models) {
                 }
                 else if (placeData.location == 'paarl') {
                     loc = 'CJ';
-                    console.log(loc + ' loc');
                 }
 
                 function king(input) {
                     return input.reg_number.startsWith(loc);
                 }
-
 
                 var v = thePlate.filter(king);
 
