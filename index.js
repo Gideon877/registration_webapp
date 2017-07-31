@@ -26,6 +26,9 @@ app.use(bodyParser.json())
 app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 * 30}}));
 app.use(flash()); // set up http session
 
+app.get('/', function(req, res){
+    res.redirect('/reg_numbers')
+})
 app.get('/reg_numbers', plateRoutes.index);
 app.get('/filter', plateRoutes.filterData);
 
