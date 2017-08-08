@@ -6,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/registration_number.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -34,7 +35,8 @@
 
     <div class="container">
 
-        <h3>Location</h3>
+        <h3>Select Location</h3>
+
         <form class="filterData" action="/filter" method="post">
 
             <div class="radio">
@@ -57,22 +59,27 @@
         </form>
 
 
-        {{#if messages.error}}
-            <div class="alert alert-danger">
-                {{messages.error}}
-                <br>
-                <br>
-            </div>
-        {{/if}}
-        {{#if messages.success}}
-            <div class="success">
-                {{message.success}}
-                <br>
-                <br>
-            </div>
-        {{/if}}
+        <div class="row">
+            <div class="col-xs-4">
 
+                {{#if messages.error}}
+                    <div class="alert alert-danger">
+                        {{messages.error}}
+                        <br>
+                        <br>
+                    </div>
 
+                {{/if}}
+
+                {{#if messages.success}}
+                    <div class="success">
+                        {{message.success}}
+                        <br>
+                        <br>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
     </div>
     </div>
 
