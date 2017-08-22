@@ -24,6 +24,27 @@
     </nav>
 
     <div class="container">
+        <div class="row">
+            <div class="col-xs-4">
+
+                {{#if messages.error}}
+                <div class="alert alert-danger">
+                    {{messages.error}}
+                    <br>
+                    <br>
+                </div>
+
+                {{/if}}
+
+                {{#if messages.success}}
+                <div class="success">
+                    {{message.success}}
+                    <br>
+                    <br>
+                </div>
+                {{/if}}
+            </div>
+        </div>
         <form action="/reg_numbers" method="post" class="form-inline">
             <div class="form-group">
                 <input type="text" name="reg_number" class="form-control" placeholder="Enter registration number">
@@ -58,28 +79,7 @@
         </form>
 
 
-        <div class="row">
-            <div class="col-xs-4">
 
-                {{#if messages.error}}
-                    <div class="alert alert-danger">
-                        {{messages.error}}
-                        <br>
-                        <br>
-                    </div>
-
-                {{/if}}
-
-                {{#if messages.success}}
-                    <div class="success">
-                        {{message.success}}
-                        <br>
-                        <br>
-                    </div>
-                {{/if}}
-            </div>
-        </div>
-    </div>
     </div>
 
     <div class="container">

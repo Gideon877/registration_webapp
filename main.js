@@ -30,11 +30,9 @@ module.exports = function(models) {
                         if (err) {
                             return done(err)
                         }
-                        console.log(result.reg_number);
 
-                        display = result;
                         var data = {
-                            reg_num: display
+                            reg_num: result
                         }
 
                         res.render('reg_numbers', data);
