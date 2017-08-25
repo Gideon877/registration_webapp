@@ -16,8 +16,6 @@ module.exports = function(models) {
                 reg_number: req.body.reg_number
             }, function(err, thePlate) {
 
-                console.log('thePlate', thePlate);
-
                 if (err) {
                     return done(err)
                 }
