@@ -12,33 +12,45 @@ module.exports = function(models) {
             res.render('reg_numbers');
         } else {
 
-            models.Plate.find({
+            models.Plate.findOne({
                 reg_number: req.body.reg_number
             }, function(err, thePlate) {
+
+                console.log('thePlate', thePlate);
 
                 if (err) {
                     return done(err)
                 }
-                models.Plate.create({
-                    reg_number: req.body.reg_number
-                }, function(err, result) {
-                    if (err) {
-                        return done(err)
-                    }
 
-                    models.Plate.find({}, function(err, result) {
+                if (!thePlate) {
+                    models.Plate.create({
+                        reg_number: req.body.reg_number
+                    }, function(err, result) {
                         if (err) {
                             return done(err)
                         }
 
-                        var data = {
-                            reg_num: result
-                        }
+                        models.Plate.find({}, function(err, result) {
+                            if (err) {
+                                return done(err)
+                            }
 
-                        res.render('reg_numbers', data);
-                    });
+                            console.log('Res', result);
 
-                })
+                            var data = {
+                                reg_num: result
+                            }
+
+                            res.render('reg_numbers', data);
+                        });
+
+                    })
+                }
+
+                if (thePlate) {
+                    req.flash('error', 'Plate already exist!');
+                    res.render('reg_numbers');
+                }
             });
         }
     };
