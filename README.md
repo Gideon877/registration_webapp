@@ -1,14 +1,7 @@
 ## Registration Numbers WebApp
 
-### how to set up a development environment;
-1)
-2)
-### how to run your tests;
-1)
-2)
-### how to start the app;
-1)
-2)
-### some brief guidelines on how to use the app.
-1)
-2)
+*that displays a registration number plate.
+*The number plate should have a rounded corners, a black border and a yellow or silver-grey background.
+*Users should be able to add new entries, entered in a text field, to a list when the Submit button is pressed.
+*If the registration number text field is blank and the Submit button is pressed nothing should be added to the list.
+*Newly added registration numbers should be displayed below the input boxes.
