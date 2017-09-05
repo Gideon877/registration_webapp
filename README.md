@@ -1,4 +1,5 @@
 ## Registration Numbers WebApp
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 * That displays a registration number plate.
 * The number plate should have a rounded corners, a black border and a yellow or silver-grey background.
