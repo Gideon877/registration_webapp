@@ -16,7 +16,6 @@
 
 What things you need to install the software and how to install them?
 * NodeJS
-* npm
 * MongoDB
 
 ### Installing;
@@ -24,9 +23,14 @@ What things you need to install the software and how to install them?
 
 Before you try to install NodeJS open a terminal window and try to run it by typing, node -v. If NodeJS is installed it should tell you which version you have. Alternatively the command will fail and you will need to install it.
 
-To install it on Ubuntu you can use the [a apt-get package manager](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions.md).
+To install it on Ubuntu you can use the [apt-get package manager](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions.md).
 
-Alternatively you can use nvm, the [a Node Version Manager](https://github.com/creationix/nvm#install-script.md) to manage the version of NodeJS on your PC.
+Alternatively you can use nvm, the [Node Version Manager](https://github.com/creationix/nvm#install-script.md) to manage the version of NodeJS on your PC.
+
+##### mongodb
+
+How to [Install MongoDB](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-mongodb-on-ubuntu-16-04.md) - only do Part 1.
+
 
 
 And repeat
