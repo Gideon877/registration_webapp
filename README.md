@@ -17,6 +17,7 @@
 What things you need to install the software and how to install them?
 * NodeJS
 * MongoDB
+* Package.json dependencies
 
 ### Installing;
 ##### NodeJS
@@ -31,15 +32,20 @@ Alternatively you can use nvm, the [Node Version Manager](https://github.com/cre
 
 How to [Install MongoDB](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-mongodb-on-ubuntu-16-04.md) - only do Part 1.
 
-
-
-And repeat
+##### Package.json dependencies
 
 ```
-until finished
+"dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.3",
+    "mongoose": "^4.10.1"
+  }
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+To install all dependencies required for the app to run, on the terminal navigate to the project root, and type  ``` npm install ```
 
 ## Running the tests
 
