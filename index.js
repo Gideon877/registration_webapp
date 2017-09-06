@@ -30,7 +30,7 @@ app.get('/', function(req, res){
     res.redirect('/reg_numbers')
 })
 app.get('/reg_numbers', plateRoutes.index);
-app.get('/filter', plateRoutes.filterData);
+// app.get('/filter', plateRoutes.filterData);
 
 app.post('/reg_numbers',plateRoutes.index);
 app.post('/filter',plateRoutes.filterData);

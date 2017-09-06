@@ -22,7 +22,7 @@ module.exports = function(models) {
 
                 if (!thePlate) {
                     models.Plate.create({
-                        reg_number: req.body.reg_number
+                        reg_number: req.body.reg_number.toUpperCase()
                     }, function(err, result) {
                         if (err) {
                             return done(err)
@@ -32,8 +32,6 @@ module.exports = function(models) {
                             if (err) {
                                 return done(err)
                             }
-
-                            console.log('Res', result);
 
                             var data = {
                                 reg_num: result
