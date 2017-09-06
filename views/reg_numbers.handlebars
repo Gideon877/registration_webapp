@@ -17,77 +17,118 @@
                 <a class="navbar-brand" href="/reg_numbers">Registration Numbers</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/reg_numbers">Home</a></li>
-                <li><a href="https://gideon877.github.io/portfolio/">Contact</a></li>
+                <!-- <li class="active"><a href="/reg_numbers">Home</a></li> -->
+                <!-- <li><a href="https://gideon877.github.io/portfolio/">Contact</a></li> -->
             </ul>
         </div>
     </nav>
-
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-md-3 col-sm-4">
 
+            </div>
+            <div class="col-md-6 col-sm-8" style="font-size:16px;">
                 {{#if messages.error}}
-                <div class="alert alert-danger">
-                    {{messages.error}}
-                    <br>
-                    <br>
-                </div>
+                    <div class="error">
+                        {{messages.error}}
+                        <br>
+                        <br>
+                    </div>
 
                 {{/if}}
 
                 {{#if messages.success}}
-                <div class="success">
-                    {{message.success}}
-                    <br>
-                    <br>
-                </div>
+                    <div class="success">
+                        {{message.success}}
+                        <br>
+                        <br>
+                    </div>
                 {{/if}}
             </div>
+
         </div>
-        <form action="/reg_numbers" method="post" class="form-inline">
-            <div class="form-group">
-                <input type="text" name="reg_number" class="form-control" placeholder="Enter registration number">
-                <button id="myAddButton" class="btn btn-prima">Submit</button>
-            </div>
-        </form>
-    </div>
+    </div> -->
+
 
     <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-3">
+                <div>
+                    {{#if messages.error}}
+                    <div class="error">
+                        {{messages.error}}
+                        <br>
+                        <br>
+                    </div>
 
-        <h3>Select Location</h3>
+                    {{/if}}
 
-        <form class="filterData" action="/filter" method="post">
+                    {{#if messages.success}}
+                    <div class="success">
+                        {{message.success}}
+                        <br>
+                        <br>
+                    </div>
+                    {{/if}}
+                </div>
 
-            <div class="radio">
-                <label><input type="radio" name="location" value="bellville">Bellville</label>
             </div>
+            <div class="col-md-10 col-sm-9">
+                <form action="/reg_numbers" method="post" class="form-horizontal">
+                    <fieldset>
 
-            <div class="radio">
-                <label><input type="radio" name="location" value="capetown">Cape Town</label>
-            </div>
+                        <div class="form-group">
+                            <div class="form-inline">
+                                <div class="">
 
-            <div class="radio">
-                <label><input type="radio" name="location" value="paarl">Paarl</label>
-            </div>
-
-            <div class="radio">
-                <label><input type="radio" name="location" value="all">All</label>
-            </div>
-
-            <button type="submit" class="btn btn-prima" id="myAddButton">Filter</button>
-        </form>
+                                    <input type="text" name="reg_number" class="form-control" placeholder="Enter registration number" required maxlength="10">
+                                    <button id="myAddButton" class="btn btn-prima" data-toggle="tooltip" data-placement="left" title="Add new registration number.">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
 
 
+                <legend>Select Location</legend>
+                <form class="filterData" action="/filter" method="post">
 
-    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="location" value="bellville">Bellville</label>
+                    </div>
 
-    <div class="container">
-        {{#each reg_num}}
+                    <div class="radio">
+                        <label><input type="radio" name="location" value="capetown">Cape Town</label>
+                    </div>
+
+                    <div class="radio">
+                        <label><input type="radio" name="location" value="paarl">Paarl</label>
+                    </div>
+
+                    <div class="radio">
+                        <label><input type="radio" name="location" value="all">All</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-prima" id="myAddButton">Filter</button>
+
+                </form>
+                <hr>
+                {{#each reg_num}}
+                <ul class="myReg">
+                    {{this.reg_number}}<br>
+                </ul>
+                {{/each}}
+            </div
+        </div>
+        <hr>
+        <!-- <div class="container">
+            {{#each reg_num}}
             <ul class="myReg">
                 {{this.reg_number}}<br>
             </ul>
-        {{/each}}
+            {{/each}}
 
+        </div> -->
     </div>
+
 </body>

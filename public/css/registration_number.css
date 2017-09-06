@@ -32,14 +32,14 @@ element.style, ul {
     background-color: silver;
     background-position: 10px 10px;
     border: 3px solid black;
-    border-radius: 7px;
+    border-radius: 5px;
     font-weight: bold;
     margin-bottom: 12px;
     margin-top: 5px;
-    padding: 12px 20px 12px 20px;
+    padding: 2px 0px 2px 0px;
     text-align: center;
-    width: 200px;
-    display: block;
+    width: 130px;
+    display: inline-block;;
 }
 hr {
     clear: both;

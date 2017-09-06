@@ -8,7 +8,7 @@ module.exports = function(models) {
         }
 
         if (!regData || !regData.reg_number) {
-            req.flash('error', 'Plate input should not be blank');
+            // req.flash('error', 'Plate input should not be blank');
             res.render('reg_numbers');
         } else {
 
