@@ -1,16 +1,22 @@
 # Registration Numbers WebApp
 
 ![Image Registration Numbers](http://backend-basics.projectcodex.co/reg_number_select_town.jpg)
-
-* That displays a registration number plate.
-* The number plate should have a rounded corners, a black border and a yellow or silver-grey background.
+* A valid registration for either Cape Town, Bellville, or Paarl.
+* Each number plate have rounded corners, a black border and a silver-grey background.
 * Users should be able to add new entries, entered in a text field, to a list when the Add button is pressed.
-* If the registration number text field is blank and the Add button is pressed nothing should be added to the list.
+* If the registration number text field is blank and the ```Add``` button is pressed nothing should be added to the list.
 * Newly added registration numbers should be displayed below the input boxes.
 
 ## Getting Started
 ### Backend (Server side).
-* Clone or download this respository https://github.com/Gideon877/registration_webapp.git to your machine from GitHub.
+Clone or download this respository https://github.com/Gideon877/registration_webapp.git to your machine from GitHub.
+  
+  
+##### Cloning
+* Go to the terminal and and copy and paste the following code;
+     
+        ``` $ git clone https://github.com/Gideon877/registration_webapp.git registration_webapp ```
+
 
 ### Prerequisites
 
@@ -18,6 +24,7 @@ What things you need to install the software and how to install them?
 * NodeJS
 * MongoDB
 * Package.json dependencies
+* Mocha
 
 ### Installing;
 ##### NodeJS
@@ -28,7 +35,7 @@ To install it on Ubuntu you can use the [apt-get package manager](https://nodejs
 
 Alternatively you can use nvm, the [Node Version Manager](https://github.com/creationix/nvm#install-script.md) to manage the version of NodeJS on your PC.
 
-##### mongodb
+##### Mongodb
 
 How to [Install MongoDB](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-mongodb-on-ubuntu-16-04.md) - only do Part 1.
 
@@ -47,54 +54,34 @@ How to [Install MongoDB](https://www.digitalocean.com/community/tutorials/how-to
 
 To install all dependencies required for the app to run, on the terminal navigate to the project root, and type  ``` npm install ```
 
-## Running the tests
-### Mocha Setup
-##### Install Mocha
+##### Mocha Setup
+###### Install Mocha
 First you need to install Mocha using this command:
 ```
 sudo npm install -g mocha
 ```
-After running this command, run ``` mocha ``` from any terminal window in the project directory.
+
+## Running the tests
+
+Run ``` $ mocha ``` from app directory terminal window in the project directory and this will be your results;
+    ```
+    modules should be able to
+      ✓ store Plates to MongoDB
+      ✓ create a new Plate
+      ✓ rejects duplicate
+
+    3 passing (308ms)
+
+    ```
+
+
 
 ### What does these tests?
 
-- Modules should be able to:
+1) Takes input, create a new object with the entered number plate to MongoDB with a property of **reg_number**, then check if the object is saved in the database and return result in a variable ```plate```.
 
-    * Store entered number plates to MongoDB both locally and online.
-    * Create a new number plate with no more than 10 characters
-    * Rejects duplicates (checks if the entered plate have been stored in the database
-```
-modules should be able to
-    ✓ store Plates to MongoDB
-    ✓ create a new Plate
-    ✓ rejects duplicate
-
-  3 passing (308ms)
 
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-describe('modules should be able to', function() {
-
-    var models = Models('mongodb://localhost/reg_numbers-tests');
-
-    beforeEach(function(done) {
-        models.Plate.remove({}, function(err){
-            if(err){
-                done(err)
-            }
-            models.Plate.create({
-                reg_number: 'CA 987 0000'
-            }, function(err){
-                done(err);
-            });
-        });
-    });
-
     it('store Plates to MongoDB', function(done) {
         models.Plate.create({
             reg_number: 'CA 987 2899'
@@ -109,6 +96,46 @@ describe('modules should be able to', function() {
     });
 ```
 
+2) Create a new number plate that does not exist in the database.
+
+```
+if (!thePlate){
+   models.Plate.create({
+        reg_number: 'CF 987 2811'
+    }, function(err, result){
+        if (err){
+            return done(err);
+        }
+
+        assert.equal(1, results.length);
+        assert.equal("CF 987 2811", results[0].reg_number);
+        done();
+    });
+}
+
+```
+3) Rejects duplicates (checks if the entered plate have been stored in the database before then return the existing plate object.
+
+```
+    models.Plate.findOne({
+            reg_number: 'CA 987 0000',
+        }, function(err, thePlate){
+            if (err){
+                //test fail if there is an error
+                return done(err)
+            }
+
+            // thePlate is in the Database
+            assert.ok(thePlate !== null);
+            if (thePlate){
+                assert.equal('CA 987 0000', thePlate.reg_number);
+                done();
+            }
+
+        });
+```
+   
+ 
 ## Deployment
 
 The app is deployed at Heroku and gitHub.
