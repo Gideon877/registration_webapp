@@ -154,6 +154,7 @@ Registraion webapp listening at http://:::7000
 ```
 
 Then open a new tab on your browser and type this url http://localhost:7000/reg_numbers and the app will open.
+### Routes
 
 HTTP Method | Route Name | Description
 ------------ | ------------- | ---------
