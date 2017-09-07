@@ -135,7 +135,34 @@ if (!thePlate){
         });
 ```
    
- 
+   
+## Running the app locally
+
+* In the command line, navigate to the project working folder.Once you are in the appropriate folder input this command
+
+```$ nodemon``` or ```node index.js``` 
+
+* The following message should be displayed
+  ``` 
+[nodemon] 1.11.0
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node index.js`
+express-session deprecated undefined resave option; provide resave option index.js:26:9
+express-session deprecated undefined saveUninitialized option; provide saveUninitialized option index.js:26:9
+Registraion webapp listening at http://:::7000
+```
+
+  * Then open a new tab on your browser and type this url ``` http://localhost:7000/reg_numbers ``` and the app will open.
+  
+  ```
+    Route | Description
+------------ | -------------
+GET | iiiii
+POST | iisisis
+  ```
+
+
 ## Deployment
 
 The app is deployed at Heroku and gitHub.
