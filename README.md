@@ -48,15 +48,29 @@ How to [Install MongoDB](https://www.digitalocean.com/community/tutorials/how-to
 To install all dependencies required for the app to run, on the terminal navigate to the project root, and type  ``` npm install ```
 
 ## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+### Mocha Setup
+##### Install Mocha
+First you need to install Mocha using this command:
 ```
-Give an example
+sudo npm install -g mocha
+```
+After running this command, run ``` mocha ``` from any terminal window in the project directory.
+
+### What does these tests?
+
+- Modules should be able to:
+
+    * Store entered number plates to MongoDB both locally and online.
+    * Create a new number plate with no more than 10 characters
+    * Rejects duplicates (checks if the entered plate have been stored in the database
+```
+modules should be able to
+    ✓ store Plates to MongoDB
+    ✓ create a new Plate
+    ✓ rejects duplicate
+
+  3 passing (308ms)
+
 ```
 
 ### And coding style tests
