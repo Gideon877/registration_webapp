@@ -72,9 +72,6 @@ Run ``` $ mocha ``` from app directory terminal window in the project directory 
 
     3 passing (308ms)
 
-    
-
-
 
 ### What does these tests?
 
@@ -143,6 +140,7 @@ if (!thePlate){
 ```$ nodemon``` or ```node index.js``` 
 
 * The following message should be displayed
+
   ``` 
 [nodemon] 1.11.0
 [nodemon] to restart at any time, enter `rs`
@@ -151,9 +149,10 @@ if (!thePlate){
 express-session deprecated undefined resave option; provide resave option index.js:26:9
 express-session deprecated undefined saveUninitialized option; provide saveUninitialized option index.js:26:9
 Registraion webapp listening at http://:::7000
+
 ```
 
-Then open a new tab on your browser and type this url http://localhost:7000/reg_numbers and the app will open.
+Then open a new tab on your browser and type this [url](http://localhost:7000/reg_numbers) and the app will open.
 ### Routes
 
 HTTP Method | Route Name | Description
