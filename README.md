@@ -9,7 +9,7 @@
 
 ## Getting Started
 ### Backend (Server side).
-Clone or download this respository https://github.com/Gideon877/registration_webapp.git to your machine from GitHub.
+Clone or download this [respository](https://github.com/Gideon877/registration_webapp.git) to your machine from GitHub.
   
   
 ##### Cloning
