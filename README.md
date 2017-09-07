@@ -153,7 +153,7 @@ express-session deprecated undefined saveUninitialized option; provide saveUnini
 Registraion webapp listening at http://:::7000
 ```
 
-* Then open a new tab on your browser and type this url ``` http://localhost:7000/reg_numbers ``` and the app will open.
+* Then open a new tab on your browser and type this url http://localhost:7000/reg_numbers and the app will open.
   
   
 HTTP Method | Route Name | Description
