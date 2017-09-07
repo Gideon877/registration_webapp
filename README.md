@@ -153,14 +153,16 @@ express-session deprecated undefined saveUninitialized option; provide saveUnini
 Registraion webapp listening at http://:::7000
 ```
 
-  * Then open a new tab on your browser and type this url ``` http://localhost:7000/reg_numbers ``` and the app will open.
+  * Then open a new tab on your browser and type this url ``` http://localhost:7000/reg_numbers ``` 
+  and the app will open.
   
-  ```
-    Route | Description
------------- | -------------
-GET | iiiii
-POST | iisisis
-  ```
+  
+HTTP Method | Route Name | Description
+------------ | ------------- | ---------
+GET | /reg_numbers	 	  | Retrieves all the entered registration numbers from the database.
+POST | /reg_numbers	 	  | Submits all the entered registration numbers to the database.
+GET | /filter	 	  | Retrieves the filtered results of the registration numbers from the database.
+POST | /filter	 	  | Submits the requested registration area to be filtered.
 
 
 ## Deployment
