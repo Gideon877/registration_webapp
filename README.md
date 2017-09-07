@@ -15,7 +15,7 @@ Clone or download this respository https://github.com/Gideon877/registration_web
 ##### Cloning
 * Go to the terminal and and copy and paste the following code;
      
-        ``` $ git clone https://github.com/Gideon877/registration_webapp.git registration_webapp ```
+         $ git clone https://github.com/Gideon877/registration_webapp.git registration_webapp 
 
 
 ### Prerequisites
@@ -52,7 +52,7 @@ How to [Install MongoDB](https://www.digitalocean.com/community/tutorials/how-to
   }
 ```
 
-To install all dependencies required for the app to run, on the terminal navigate to the project root, and type  ``` npm install ```
+To install all dependencies required for the app to run, on the terminal navigate to the project root, and type  ``` npm install ``` .
 
 ##### Mocha Setup
 ###### Install Mocha
@@ -64,7 +64,7 @@ sudo npm install -g mocha
 ## Running the tests
 
 Run ``` $ mocha ``` from app directory terminal window in the project directory and this will be your results;
-    ```
+    
     modules should be able to
       ✓ store Plates to MongoDB
       ✓ create a new Plate
@@ -72,7 +72,7 @@ Run ``` $ mocha ``` from app directory terminal window in the project directory 
 
     3 passing (308ms)
 
-    ```
+    
 
 
 
@@ -176,11 +176,6 @@ $ git push heroku master
 ```
 
 To open the app in your browser, type ```heroku open``` .
-
-
-
-
-
 
 
 ## Built With
