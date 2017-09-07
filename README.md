@@ -139,12 +139,9 @@ if (!thePlate){
 
 ```$ nodemon``` or ```node index.js``` 
 
-* The following message should be displayed
+* The following message should be displayed  ```Registraion webapp listening at http://:::7000```
 
-```Registraion webapp listening at http://:::7000```
-
-
-Then open a new tab on your browser and type this [url](http://localhost:7000/reg_numbers) and the app will open.
+* Then open a new tab on your browser and type this ``` http://localhost:7000/reg_numbers``` and the app will open.
 
 ## Deployment
 
