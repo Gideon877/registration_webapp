@@ -78,37 +78,101 @@ modules should be able to
 Explain what these tests test and why
 
 ```
-Give an example
+describe('modules should be able to', function() {
+
+    var models = Models('mongodb://localhost/reg_numbers-tests');
+
+    beforeEach(function(done) {
+        models.Plate.remove({}, function(err){
+            if(err){
+                done(err)
+            }
+            models.Plate.create({
+                reg_number: 'CA 987 0000'
+            }, function(err){
+                done(err);
+            });
+        });
+    });
+
+    it('store Plates to MongoDB', function(done) {
+        models.Plate.create({
+            reg_number: 'CA 987 2899'
+        }, function(err) {
+                models.Plate.findOne({
+                    reg_number: 'CA 987 2899',
+                }, function(err, plate) {
+                    assert.equal("CA 987 2899", plate.reg_number)
+                    done(err);
+                });
+            });
+    });
 ```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+The app is deployed at Heroku and gitHub.
+Use mLab to deploy your application.
+
+##### Prerequisites
+The best practices in this article assume that you have:
+
+* Node.js and npm installed.
+* an existing Node.js app.
+* a free Heroku account.
+* the Heroku CLI.
+
+Then start your app locally using ```heroku local``` command which is installed as a part of the Heroku CLI.
+
+``` $ heroku local web ```
+Your app should now be running on http://localhost:5000/.
+
+#### Deploying App on Heroku
+
+```
+$ git add .
+$ git commit -m "Added a Procfile."
+$ heroku login
+Enter your Heroku credentials.
+...
+$ heroku create
+Creating arcane-lowlands-8408... done, stack is cedar
+http://arcane-lowlands-8408.herokuapp.com/ | git@heroku.com:arcane-lowlands-8408.git
+Git remote heroku added
+$ git push heroku master
+...
+-----> Node.js app detected
+...
+-----> Launching... done
+       http://arcane-lowlands-8408.herokuapp.com deployed to Heroku
+
+```
+
+To open the app in your browser, type ```heroku open``` .
+
+
+
+
+
+
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [MLAB](https://mlab.com) - Cloud MongoDB server
+* [NPM](https://www.npmjs.com) - Dependency Management
+* [Bootstrap](https://bootswatch.com/cerulean/) - The web framework used
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
+``` "version": "1.0.0", ```
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Author
 
-* **Thabang Gideon Magaola** - *Initial work* - [Gideon877](https://github.com/Gideon877)
+* **Thabang Gideon Magaola** - *Initial work* - [@Gideon](https://github.com/Gideon877)
 
 ## License
 
-<!-- This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details -->
+This project is licensed under the ISC License - see the [ISC-LICENSE.md](https://github.com/nevir/readable-licenses/blob/master/markdown/ISC-LICENSE.md) file for details 
+```   "license": "ISC" ```
 
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
