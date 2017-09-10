@@ -57,20 +57,22 @@ To install all dependencies required for the app to run, on the terminal navigat
 ##### Mocha Setup
 ###### Install Mocha
 First you need to install Mocha using this command:
-```bash
-sudo npm install -g mocha
+```
+$ sudo npm install -g mocha
 ```
 
 ## Running the tests
 
-Run ```bash $ mocha ``` from app directory terminal window in the project directory and this will be your results;
-    
-    modules should be able to
-      ✓ store Plates to MongoDB
-      ✓ create a new Plate
-      ✓ rejects duplicate
+Run ```$ mocha ``` from app directory terminal window in the project directory and this will be your results;
 
-    3 passing (308ms)
+```bash
+modules should be able to
+  ✓ store Plates to MongoDB
+  ✓ create a new Plate
+  ✓ rejects duplicate
+
+  3 passing (308ms)
+```
 
 
 ### What does these tests?
@@ -137,7 +139,7 @@ if (!thePlate){
 
 * In the command line, navigate to the project working folder.Once you are in the appropriate folder input this command
 
-```bash $ nodemon``` or ```bash node index.js``` 
+```$ nodemon``` or ```$ node index.js``` 
 
 * The following message should be displayed  ```Registraion webapp listening at http://:::7000```
 
@@ -158,7 +160,7 @@ The best practices in this article assume that you have:
 
 Then start your app locally using ```heroku local``` command which is installed as a part of the Heroku CLI.
 
-``` bash $ heroku local web ```
+``` $ heroku local web ```
 Your app should now be running on http://localhost:5000/.
 
 #### Deploying App on Heroku
@@ -182,7 +184,7 @@ $ git push heroku master
 
 ```
 
-To open the app in your browser, type ```bash heroku open``` .
+To open the app in your browser, type ```$ heroku open``` .
 
 
 ## Built With
