@@ -14,7 +14,7 @@ Clone or download this [respository](https://github.com/Gideon877/registration_w
   
 ##### Cloning
 * Go to the terminal and and copy and paste the following code;
-     
+    
          $ git clone https://github.com/Gideon877/registration_webapp.git registration_webapp 
 
 
@@ -41,7 +41,7 @@ How to [Install MongoDB](https://www.digitalocean.com/community/tutorials/how-to
 
 ##### Package.json dependencies
 
-```
+```json
 "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
@@ -57,13 +57,13 @@ To install all dependencies required for the app to run, on the terminal navigat
 ##### Mocha Setup
 ###### Install Mocha
 First you need to install Mocha using this command:
-```
+```bash
 sudo npm install -g mocha
 ```
 
 ## Running the tests
 
-Run ``` $ mocha ``` from app directory terminal window in the project directory and this will be your results;
+Run ```bash $ mocha ``` from app directory terminal window in the project directory and this will be your results;
     
     modules should be able to
       ✓ store Plates to MongoDB
@@ -95,7 +95,7 @@ Run ``` $ mocha ``` from app directory terminal window in the project directory 
 
 2) Create a new number plate that does not exist in the database.
 
-```
+```javascript
 if (!thePlate){
    models.Plate.create({
         reg_number: 'CF 987 2811'
@@ -113,7 +113,7 @@ if (!thePlate){
 ```
 3) Rejects duplicates (checks if the entered plate have been stored in the database before then return the existing plate object.
 
-```
+```javascript
     models.Plate.findOne({
             reg_number: 'CA 987 0000',
         }, function(err, thePlate){
@@ -137,7 +137,7 @@ if (!thePlate){
 
 * In the command line, navigate to the project working folder.Once you are in the appropriate folder input this command
 
-```$ nodemon``` or ```node index.js``` 
+```bash $ nodemon``` or ```bash node index.js``` 
 
 * The following message should be displayed  ```Registraion webapp listening at http://:::7000```
 
@@ -158,12 +158,12 @@ The best practices in this article assume that you have:
 
 Then start your app locally using ```heroku local``` command which is installed as a part of the Heroku CLI.
 
-``` $ heroku local web ```
+``` bash $ heroku local web ```
 Your app should now be running on http://localhost:5000/.
 
 #### Deploying App on Heroku
 
-```
+```bash
 $ git add .
 $ git commit -m "Added a Procfile."
 $ heroku login
@@ -182,7 +182,7 @@ $ git push heroku master
 
 ```
 
-To open the app in your browser, type ```heroku open``` .
+To open the app in your browser, type ```bash heroku open``` .
 
 
 ## Built With
