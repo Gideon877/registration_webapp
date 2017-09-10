@@ -78,7 +78,7 @@ Run ``` $ mocha ``` from app directory terminal window in the project directory 
 1) Takes input, create a new object with the entered number plate to MongoDB with a property of **reg_number**, then check if the object is saved in the database and return result in a variable ```plate```.
 
 
-```
+```javascript
     it('store Plates to MongoDB', function(done) {
         models.Plate.create({
             reg_number: 'CA 987 2899'
