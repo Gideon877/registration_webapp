@@ -10,12 +10,12 @@
 ## Getting Started
 ### Backend (Server side).
 Clone or download this [respository](https://github.com/Gideon877/registration_webapp.git) to your machine from GitHub.
-  
-  
+
+
 ##### Cloning
 * Go to the terminal and and copy and paste the following code;
-    
-         $ git clone https://github.com/Gideon877/registration_webapp.git registration_webapp 
+
+         $ git clone https://github.com/Gideon877/registration_webapp.git registration_webapp
 
 
 ### Prerequisites
@@ -133,13 +133,14 @@ if (!thePlate){
 
         });
 ```
-   
-   
+
+
 ## Running the app locally
 
 * In the command line, navigate to the project working folder.Once you are in the appropriate folder input this command
 
-```$ nodemon``` or ```$ node index.js``` 
+        $ nodemon or
+        $ node index.js
 
 * The following message should be displayed  ```Registraion webapp listening at http://:::7000```
 
@@ -158,9 +159,9 @@ The best practices in this article assume that you have:
 * a free Heroku account.
 * the Heroku CLI.
 
-Then start your app locally using ```heroku local``` command which is installed as a part of the Heroku CLI.
+Then start your app locally using `heroku local` command which is installed as a part of the Heroku CLI.
 
-``` $ heroku local web ```
+    $ heroku local web
 Your app should now be running on http://localhost:5000/.
 
 #### Deploying App on Heroku
@@ -200,10 +201,9 @@ To open the app in your browser, type ```$ heroku open``` .
 
 ## Author
 
-* **Thabang Gideon Magaola** - *Initial work* - [@Gideon](https://github.com/Gideon877)
+* **Thabang Gideon Magaola** - *Initial work* - [Thabang Gideon](https://github.com/Gideon877)
 
 ## License
 
-This project is licensed under the ISC License - see the [ISC-LICENSE.md](https://github.com/nevir/readable-licenses/blob/master/markdown/ISC-LICENSE.md) file for details 
+This project is licensed under the ISC License - see the [ISC-LICENSE.md](https://github.com/nevir/readable-licenses/blob/master/markdown/ISC-LICENSE.md) file for details
 ```   "license": "ISC" ```
-
