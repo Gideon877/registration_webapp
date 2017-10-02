@@ -8,11 +8,21 @@
 * Newly added registration numbers should be displayed below the input boxes.
 
 ## Getting Started
+### Task done
+
+- [x] create a server for the app
+- [x] create a model (mongodb schema)
+- [x] create routes file and views folder
+- [x] create a public folder (css files)
+- [x] create a github repository and deploy
+- [x] deploy at heroku
+
 ### Backend (Server side).
 Clone or download this [respository](https://github.com/Gideon877/registration_webapp.git) to your machine from GitHub.
 
 
 ##### Cloning
+
 * Go to the terminal and and copy and paste the following code;
 
          $ git clone https://github.com/Gideon877/registration_webapp.git registration_webapp
@@ -52,18 +62,23 @@ How to [Install MongoDB](https://www.digitalocean.com/community/tutorials/how-to
   }
 ```
 
-To install all dependencies required for the app to run, on the terminal navigate to the project root, and type  ``` npm install ``` .
+To install all dependencies required for the app to run, on the terminal navigate to the registration_webapp folder, and type  ``` npm install ``` .
 
 ##### Mocha Setup
+
 ###### Install Mocha
+
 First you need to install Mocha using this command:
-```
+
+```bash
 $ sudo npm install -g mocha
 ```
 
 ## Running the tests
 
-Run ```$ mocha ``` from app directory terminal window in the project directory and this will be your results;
+if you are using windows OS, first you need to get the mongodb server running.
+
+In the CLI navigate to the registration_webapp and run/type `$ mocha` and this will be your results;
 
 ```bash
 modules should be able to
@@ -75,69 +90,18 @@ modules should be able to
 ```
 
 
-### What does these tests?
+### What does these tests do?
 
 1) Takes input, create a new object with the entered number plate to MongoDB with a property of **reg_number**, then check if the object is saved in the database and return result in a variable ```plate```.
 
-
-```javascript
-    it('store Plates to MongoDB', function(done) {
-        models.Plate.create({
-            reg_number: 'CA 987 2899'
-        }, function(err) {
-                models.Plate.findOne({
-                    reg_number: 'CA 987 2899',
-                }, function(err, plate) {
-                    assert.equal("CA 987 2899", plate.reg_number)
-                    done(err);
-                });
-            });
-    });
-```
-
 2) Create a new number plate that does not exist in the database.
 
-```javascript
-if (!thePlate){
-   models.Plate.create({
-        reg_number: 'CF 987 2811'
-    }, function(err, result){
-        if (err){
-            return done(err);
-        }
-
-        assert.equal(1, results.length);
-        assert.equal("CF 987 2811", results[0].reg_number);
-        done();
-    });
-}
-
-```
 3) Rejects duplicates (checks if the entered plate have been stored in the database before then return the existing plate object.
-
-```javascript
-    models.Plate.findOne({
-            reg_number: 'CA 987 0000',
-        }, function(err, thePlate){
-            if (err){
-                //test fail if there is an error
-                return done(err)
-            }
-
-            // thePlate is in the Database
-            assert.ok(thePlate !== null);
-            if (thePlate){
-                assert.equal('CA 987 0000', thePlate.reg_number);
-                done();
-            }
-
-        });
-```
 
 
 ## Running the app locally
 
-* In the command line, navigate to the project working folder.Once you are in the appropriate folder input this command
+* In the command line,  navigate to the registration_webapp directory.Once you are in the appropriate folder input this command
 
         $ nodemon or
         $ node index.js
@@ -148,44 +112,27 @@ if (!thePlate){
 
 ## Deployment
 
-The app is deployed at Heroku and gitHub.
-Use mLab to deploy your application.
+The app is deployed at Heroku and gitHub. The app also use mLab database.
 
-##### Prerequisites
+### Prerequisites
+
 The best practices in this article assume that you have:
 
-* Node.js and npm installed.
-* an existing Node.js app.
-* a free Heroku account.
-* the Heroku CLI.
+- Node.js and npm installed.
+- an existing Node.js app.
+- a free Heroku account.
+- the Heroku CLI.
 
 Then start your app locally using `heroku local` command which is installed as a part of the Heroku CLI.
 
-    $ heroku local web
-Your app should now be running on http://localhost:5000/.
+`$ heroku local web` Your app should now be running on <http://localhost:5000/>.
 
-#### Deploying App on Heroku
+The shoes api App is deployed on [Heroku](https://https://regnumbers-8.herokuapp.com)
 
-```bash
-$ git add .
-$ git commit -m "Added a Procfile."
-$ heroku login
-Enter your Heroku credentials.
-...
-$ heroku create
-Creating arcane-lowlands-8408... done, stack is cedar
-http://arcane-lowlands-8408.herokuapp.com/ | git@heroku.com:arcane-lowlands-8408.git
-Git remote heroku added
-$ git push heroku master
-...
------> Node.js app detected
-...
------> Launching... done
-       http://arcane-lowlands-8408.herokuapp.com deployed to Heroku
-
-```
-
-To open the app in your browser, type ```$ heroku open``` .
+###### To open the app locally;
+  - first you need to navigate to your waiter_webapp directory on the terminal.
+  - run the server using `$ heroku open` command.
+  - navigate to your web browser and type <http://localhost:5000/> on the url input.
 
 
 ## Built With

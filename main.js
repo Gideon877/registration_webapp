@@ -88,10 +88,8 @@ module.exports = function(models) {
 
                 var v = thePlate.filter(king);
 
-                display = v;
-
                 var data = {
-                    reg_num: display
+                    reg_num: v
                 }
 
                 res.render('reg_numbers', data);
